@@ -15,6 +15,7 @@ describe ('Product selection though POM', function(){
 it ('Product execution though POM', function(){
   
     cy.visit ('https://rahulshettyacademy.com/angularpractice/')
+
 //it will select poducts fetch data from fixture and execute the customize function in support-commant function
     const products = new ProductSelection();
         products.SelectProduct().click()
@@ -25,8 +26,32 @@ it ('Product execution though POM', function(){
             cy.SelectProduct(element)
            
         })
-
+        
         products.CheckOutHome().click()
+        var sum = 0
+       
+        cy.get('tr td:nth-child(4) strong').each(($el, index, $list) => {
+           
+            const amount = $el.text()
+            var result = amount.split(" ")
+            result = result[1].trim()
+            sum = Number(sum)+Number(result)
+            
+            }).then(function(){
+                cy.log(sum)
+
+            })
+
+            cy.get('h3 strong').then(function(element){
+                const amount = element.text()
+                var totalresult = amount.split(" ")
+                totalresult = totalresult[1].trim()
+                expect(Number(totalresult)).to.eq(sum)
+
+            })
+
+            
+
         products.CheckOut().click()
         products.SearchCountry().type('Pakistan')
         products.SelectCountry().click()
