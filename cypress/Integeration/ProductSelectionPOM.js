@@ -13,8 +13,11 @@ describe ('Product selection though POM', function(){
     })
 
 it ('Product execution though POM', function(){
+
+    //cy.visit("https://rahulshettyacademy.com/angularpractice/")
   
-    cy.visit ('https://rahulshettyacademy.com/angularpractice/')
+    cy.visit(Cypress.env('url') + "/angularpractice/")   // it will access the url we mentioned in cypress.config file
+    
 //it will select poducts fetch data from fixture and execute the customize function in support-commant function
     const products = new ProductSelection();
         products.SelectProduct().click()

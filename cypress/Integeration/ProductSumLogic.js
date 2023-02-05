@@ -49,9 +49,7 @@ it ('Product execution though POM', function(){
                 expect(Number(totalresult)).to.eq(sum)
 
             })
-
             
-
         products.CheckOut().click()
         products.SearchCountry().type('Pakistan')
         products.SelectCountry().click()
@@ -59,6 +57,9 @@ it ('Product execution though POM', function(){
         products.ClickPurchaseButton().click()
         products.CheckAlert().should('be.visible').contains('Thank you! Your order will be delivered in next few weeks')
         products.ClossAlert().click()
+            
+
+        
       
     })
 })
