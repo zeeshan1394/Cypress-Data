@@ -10,11 +10,6 @@ module.exports = defineConfig({
   },
   
   projectId: "wp6mur",
-
-  retries: {
-    runMode: 1,
-    },
-
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
