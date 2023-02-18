@@ -7,7 +7,11 @@
     "cypress-iframe": "^1.0.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules//.bin//cypress open",
+    "HeadTest": "npm run test-- --headed",
+    "BrowserTest": "npm run test-- --browser chrome",
+    "recordDashboardTest": "npm run test-- --record --key a7bfbb69-3479-4611-a895-9ff2b992d9cc --reporter mochawesome"
+
   },
   "author": "",
   "license": "ISC",
