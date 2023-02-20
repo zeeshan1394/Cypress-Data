@@ -1,5 +1,6 @@
 
 import ProductSelection from "./PageObjectModel/ProductSelection"
+import HomePage from "./PageObjectModel/HomePage"
 
 describe ('Product selection though POM', function(){
    
